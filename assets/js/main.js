@@ -6,89 +6,80 @@
 
 const projets = {
 	"Minesweeper": {
-        titre: "Minesweeper",
-        description: "Creating the Minesweeper game in Java.",
-        github: "https://github.com/leadervieux/Minesweeper-in-Java.git",
-        rapport: null  // Pas de lien
-    },
+		titre: "Minesweeper",
+		description: "Creating the Minesweeper game in Java.",
+		image: "images/pic01.jpg",
+		github: "https://github.com/leadervieux/Minesweeper-in-Java.git",
+		rapport: null
+	},
 	"Power-BI": {
-        titre: "Data Vizualisation with Power BI",
-        description: "Data analysis of a security company.",
-        github: null, // Pas de lien
-        rapport: null  // Pas de lien
-    },
+		titre: "Data Vizualisation with Power BI",
+		description: "Data analysis of a security company.",
+		image: "images/pic02.jpg",
+		github: null,
+		rapport: null
+	},
 	"Vasopressor-use": {
-        titre: "Vasopresssor use for non-cardiac surgery",
-        description: "Sex as an independent risk factor for postoperative vasopressor infusion after noncardiac surgery.",
-        github: null, // Pas de lien
-        rapport: "Future..." 
-    },
-	"CFS-impact": {
-        titre: "CFS impact compared to ASA",
-        description: "Comparison of the Clinical Frailty Score and ASA Score Versus ASA Score Alone in Predicting Postoperative Outcomes in Non-Cardiac Surgery Patients",
-        github: null, // Pas de lien
-        rapport: null  // Pas de lien
-    },
-    "fraud-detection": {
+		titre: "Vasopressor use for non-cardiac surgery",
+		description: "Sex as an independent risk factor for postoperative vasopressor infusion after noncardiac surgery. The scientific report is coming...",
+		image: "images/pic03.jpg",
+		github: null,
+		rapport: null
+	},
+	"fraud-detection": {
         titre: "Détection de Fraude",
-        description: "Analyse des transactions...",
-        github: "https://github.com/...",
-        rapport: "mon-rapport.pdf"
-    },
-};
-
-// 1. La liste des données
-const projets = {
-    "fraud-detection": {
-        titre: "Détection de Fraude",
-        description: "Analyse des transactions...",
-        github: "https://github.com/...",
-        rapport: "mon-rapport.pdf"
-    },
-    "autre-projet": {
-        titre: "Projet Simple",
-        description: "Une simple étude de cas.",
-        github: null,
+        description: "Transaction analyses and forecasting fraud, from a Kaggle competition.",
+        github: "https://github.com/leadervieux/Fraud-project.git",
         rapport: null
-    }
+	}
+	"CFS-impact": {
+		titre: "CFS impact compared to ASA",
+		description: "Comparison of the Clinical Frailty Score and ASA Score Versus ASA Score Alone in Predicting Postoperative Outcomes in Non-Cardiac Surgery Patients. The scientific report is coming...",
+		image: "images/pic04.jpg",
+		github: null,
+		rapport: null
+	}
 };
 
-// 2. Fonction d'affichage
+// 2. Fonction d'affichage : remplit la page generic.html avec les infos du projet demandé dans l'URL (?id=...)
 function chargerProjet() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get('id');
-    const data = projets[id];
+	const urlParams = new URLSearchParams(window.location.search);
+	const id = urlParams.get('id');
+	const data = projets[id];
 
-    if (!data) return; 
+	if (!data) return;
 
-    // Remplissage dynamique
-    document.getElementById('projet-titre').innerText = data.titre;
-    document.getElementById('projet-desc').innerText = data.description;
-    
-    // Gestion des liens
-    const btnGit = document.getElementById('btn-github');
-    if (data.github) {
-        btnGit.href = data.github;
-        btnGit.style.display = 'inline-block';
-    } else {
-        btnGit.style.display = 'none';
-    }
+	// Remplissage dynamique
+	document.getElementById('projet-titre').innerText = data.titre;
+	document.getElementById('projet-desc').innerText = data.description;
 
-    const btnRapport = document.getElementById('btn-rapport');
-    if (data.rapport) {
-        btnRapport.href = data.rapport;
-        btnRapport.style.display = 'inline-block';
-    } else {
-        btnRapport.style.display = 'none';
-    }
+	const imgEl = document.getElementById('projet-image');
+	if (imgEl) imgEl.src = data.image || 'images/pic13.jpg';
+
+	// Gestion des liens
+	const btnGit = document.getElementById('btn-github');
+	if (data.github) {
+		btnGit.href = data.github;
+		btnGit.style.display = 'inline-block';
+	} else {
+		btnGit.style.display = 'none';
+	}
+
+	const btnRapport = document.getElementById('btn-rapport');
+	if (data.rapport) {
+		btnRapport.href = data.rapport;
+		btnRapport.style.display = 'inline-block';
+	} else {
+		btnRapport.style.display = 'none';
+	}
 }
 
 // 3. Exécution automatique au chargement de la page
 window.onload = function() {
-    // On ne lance la fonction que si on est sur la page generis.html
-    if (window.location.pathname.includes("generis.html")) {
-        chargerProjet();
-    }
+	// On ne lance la fonction que si on est sur la page generic.html
+	if (window.location.pathname.includes("generic.html")) {
+		chargerProjet();
+	}
 };
 
 (function($) {
