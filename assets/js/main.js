@@ -4,38 +4,44 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+// 1. La liste des données : un seul objet "projets", complète/modifie ici pour ajouter ou changer un projet.
+//    - images  : (optionnel) tableau de captures d'écran à afficher sous la description, ex: ["images/powerbi-1.png", "images/powerbi-2.png"]
+//                Laisse le tableau vide [] si tu ne veux aucune image sur la page du projet.
+//    - github  : mets null si tu ne veux PAS afficher le bouton GitHub
+//    - rapport : mets null si tu ne veux PAS afficher le bouton Rapport (sinon, lien vers un PDF ou une page)
 const projets = {
 	"Minesweeper": {
 		titre: "Minesweeper",
 		description: "Creating the Minesweeper game in Java.",
-		image: "images/pic01.jpg",
+		images: [],
 		github: "https://github.com/leadervieux/Minesweeper-in-Java.git",
 		rapport: null
 	},
 	"Power-BI": {
 		titre: "Data Vizualisation with Power BI",
 		description: "Data analysis of a security company.",
-		image: "images/pic02.jpg",
+		images: [],
 		github: null,
 		rapport: null
 	},
 	"Vasopressor-use": {
 		titre: "Vasopressor use for non-cardiac surgery",
 		description: "Sex as an independent risk factor for postoperative vasopressor infusion after noncardiac surgery. The scientific report is coming...",
-		image: "images/pic03.jpg",
+		images: [],
 		github: null,
 		rapport: null
 	},
 	"fraud-detection": {
         titre: "Détection de Fraude",
         description: "Transaction analyses and forecasting fraud, from a Kaggle competition.",
+        images: [],
         github: "https://github.com/leadervieux/Fraud-project.git",
         rapport: null
 	},
 	"CFS-impact": {
 		titre: "CFS impact compared to ASA",
 		description: "Comparison of the Clinical Frailty Score and ASA Score Versus ASA Score Alone in Predicting Postoperative Outcomes in Non-Cardiac Surgery Patients. The scientific report is coming...",
-		image: "images/pic04.jpg",
+		images: [],
 		github: null,
 		rapport: null
 	}
@@ -53,8 +59,13 @@ function chargerProjet() {
 	document.getElementById('projet-titre').innerText = data.titre;
 	document.getElementById('projet-desc').innerText = data.description;
 
-	const imgEl = document.getElementById('projet-image');
-	if (imgEl) imgEl.src = data.image || 'images/pic13.jpg';
+	// Galerie de captures d'écran (uniquement si le projet en fournit)
+	const galerie = document.getElementById('projet-gallery');
+	if (galerie && data.images && data.images.length > 0) {
+		galerie.innerHTML = data.images.map(function(src) {
+			return '<span class="image fit"><img src="' + src + '" alt="" /></span>';
+		}).join('');
+	}
 
 	// Gestion des liens
 	const btnGit = document.getElementById('btn-github');
