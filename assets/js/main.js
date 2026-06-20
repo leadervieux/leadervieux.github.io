@@ -31,7 +31,7 @@ const projets = {
         description: "Transaction analyses and forecasting fraud, from a Kaggle competition.",
         github: "https://github.com/leadervieux/Fraud-project.git",
         rapport: null
-	}
+	},
 	"CFS-impact": {
 		titre: "CFS impact compared to ASA",
 		description: "Comparison of the Clinical Frailty Score and ASA Score Versus ASA Score Alone in Predicting Postoperative Outcomes in Non-Cardiac Surgery Patients. The scientific report is coming...",
