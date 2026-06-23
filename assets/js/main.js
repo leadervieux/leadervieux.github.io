@@ -12,14 +12,14 @@
 const projets = {
 	"Minesweeper": {
 		titre: "Minesweeper",
-		description: "Creating the Minesweeper game in Java.",
+		description: "The goal of this project is to create a functional version of Minesweeper, a classic game where the player must uncover squares on a grid without touching the mines. This project was carried out as part of an object-oriented programming course, using Java to implement a console version of this game. The development relies on a class diagram and several sequence diagrams allowing the program architecture to be structured before its implementation. The game is developed in a console version and adheres to the classic Minesweeper rules.",
 		images: [],
 		github: "https://github.com/leadervieux/Minesweeper-in-Java.git",
 		rapport: "démineur_DERVIEUX.pdf"
 	},
 	"Power-BI": {
 		titre: "Data Vizualisation with Power BI",
-		description: "Data analysis of a security company.",
+		description: "This group project, carried out in class, involves manipulating Power BI for the benefit of a company (which can be fictitious), by proposing areas for improvement.",
 		images: [],
 		github: null,
 		rapport: null
