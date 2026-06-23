@@ -15,7 +15,7 @@ const projets = {
 		description: "Creating the Minesweeper game in Java.",
 		images: [],
 		github: "https://github.com/leadervieux/Minesweeper-in-Java.git",
-		rapport: null
+		rapport: "démineur_DERVIEUX.pdf"
 	},
 	"Power-BI": {
 		titre: "Data Vizualisation with Power BI",
