@@ -11,36 +11,43 @@
 //    - rapport : mets null si tu ne veux PAS afficher le bouton Rapport (sinon, lien vers un PDF ou une page)
 const projets = {
 	"Minesweeper": {
-		titre: "Minesweeper",
-		description: "The goal of this project is to create a functional version of Minesweeper, a classic game where the player must uncover squares on a grid without touching the mines. This project was carried out as part of an object-oriented programming course, using Java to implement a console version of this game. The development relies on a class diagram and several sequence diagrams allowing the program architecture to be structured before its implementation. The game is developed in a console version and adheres to the classic Minesweeper rules.",
+		titre: "Minesweeper in Java",
+		description: "School project built within a set deadline to learn Java and object-oriented programming. The game features a full graphical interface, mine placement logic, and win/loss detection. The full source code is on GitHub, along with a French report covering the game rules and key implementation choices.",
 		images: [],
 		github: "https://github.com/leadervieux/Minesweeper-in-Java.git",
-		rapport: "démineur_DERVIEUX.pdf"
+		rapport: null
 	},
 	"Power-BI": {
-		titre: "Data Vizualisation with Power BI",
-		description: "This group project, carried out in class, involves manipulating Power BI for the benefit of a company (which can be fictitious), by proposing areas for improvement.",
+		titre: "Data Visualisation with Power BI",
+		description: "In this school project, we worked with a synthetic dataset from a fictional surveillance camera company. Using Power BI, we built a report featuring calculated columns, custom DAX measures, interactive maps and tables — designed to present data-driven sales arguments to potential buyers.",
 		images: [],
 		github: null,
 		rapport: null
 	},
 	"Vasopressor-use": {
-		titre: "Vasopressor use for non-cardiac surgery",
-		description: "Sex as an independent risk factor for postoperative vasopressor infusion after noncardiac surgery. The scientific report is coming...",
+		titre: "Vasopressor Use After Non-Cardiac Surgery",
+		description: "Conducted during a research internship at NORCE, in collaboration with Haukeland University Hospital (Bergen, Norway). The study analyses the SQUEEZE database, covering over 25,000 surgical patients, to investigate sex as an independent risk factor for postoperative vasopressor use. Logistic regression models with interaction terms were applied in RStudio. Scientific report in preparation.",
 		images: [],
 		github: null,
 		rapport: null
 	},
 	"fraud-detection": {
-        titre: "Détection de Fraude",
-        description: "Transaction analyses and forecasting fraud, from a Kaggle competition.",
-        images: [],
-        github: "https://github.com/leadervieux/Fraud-project.git",
-        rapport: null
+		titre: "Fraud Detection — Kaggle Competition",
+		description: "Personal project based on a Kaggle competition. Covers full exploratory data analysis (EDA) and hyperparameter tuning with Optuna. XGBoost and TimeSplit cross-validation were used to predict fraudulent transactions on imbalanced financial data. Public leaderboard score: 0.929 AUC — Private score: 0.892 AUC. Full code available on GitHub.",
+		images: [],
+		github: "https://github.com/leadervieux/Fraud-project.git",
+		rapport: null
 	},
 	"CFS-impact": {
-		titre: "CFS impact compared to ASA",
-		description: "Comparison of the Clinical Frailty Score and ASA Score Versus ASA Score Alone in Predicting Postoperative Outcomes in Non-Cardiac Surgery Patients. The scientific report is coming...",
+		titre: "Clinical Frailty Score vs ASA Score",
+		description: "Conducted during a research internship at NORCE, in collaboration with Haukeland University Hospital (Bergen, Norway). Using RStudio, we compared the predictive power of the Clinical Frailty Score (CFS) and the ASA Score on postoperative outcomes after non-cardiac surgery. The project highlighted the limits of likelihood-ratio tests on large datasets, and applied ordinal and mixed-effects logistic regression models. Scientific report in preparation.",
+		images: [],
+		github: null,
+		rapport: null
+	},
+	"diffusion-finance": {
+		titre: "Diffusion Models Applied to Finance",
+		description: "4th-year engineering project at Polytech Clermont, conducted with Maxime Brée. We explored score-based diffusion models (Kronos, TimeDiffusion, TimeGrad) for probabilistic forecasting of Bitcoin stock indicators on a dataset of ~300,000 time steps. The final model, TimeGrad, generates stochastic trajectories with calibrated 50% and 80% confidence intervals. Global trend accuracy reached ~50% over a 15-step horizon — close to random, reflecting the fundamental unpredictability of short-term markets, but the model's strength lies in correctly quantifying its own uncertainty rather than producing overconfident point predictions.",
 		images: [],
 		github: null,
 		rapport: null
@@ -86,12 +93,143 @@ function chargerProjet() {
 }
 
 // 3. Exécution automatique au chargement de la page
-window.onload = function() {
-	// On ne lance la fonction que si on est sur la page generic.html
+window.addEventListener('DOMContentLoaded', function() {
+
+	// ── Projet page ──────────────────────────────────────────────
 	if (window.location.pathname.includes("generic.html")) {
 		chargerProjet();
 	}
-};
+
+	// ── Typewriter (page d'accueil uniquement) ────────────────────
+	var twEl = document.getElementById('typewriter-text');
+	if (twEl) {
+		var twText = "Welcome! This is a collection of my personal projects where I explore the intersection of Machine Learning, programming, and data storytelling.";
+		var twIndex = 0;
+		var twSpeed = 28; // ms par caractère — augmente pour ralentir
+
+		function typeNextChar() {
+			if (twIndex < twText.length) {
+				twEl.textContent += twText.charAt(twIndex);
+				twIndex++;
+				setTimeout(typeNextChar, twSpeed);
+			} else {
+				// Curseur clignotant qui disparaît après la fin
+				twEl.classList.add('tw-done');
+			}
+		}
+
+		// Petite pause avant de démarrer (laisse la page s'afficher)
+		setTimeout(typeNextChar, 600);
+	}
+
+	// ── Lightbox (pages projet avec galerie) ──────────────────────
+	// Injection du HTML de la lightbox une seule fois
+	var lbEl = document.getElementById('lightbox-overlay');
+	if (!lbEl) {
+		lbEl = document.createElement('div');
+		lbEl.id = 'lightbox-overlay';
+		lbEl.innerHTML =
+			'<button id="lb-close" aria-label="Fermer">&times;</button>' +
+			'<button id="lb-prev" aria-label="Précédent">&#8249;</button>' +
+			'<img id="lb-img" src="" alt="" />' +
+			'<button id="lb-next" aria-label="Suivant">&#8250;</button>';
+		document.body.appendChild(lbEl);
+	}
+
+	var lbImages = []; // liste des src de la galerie active
+	var lbCurrent = 0;
+
+	function lbOpen(index) {
+		lbCurrent = index;
+		document.getElementById('lb-img').src = lbImages[lbCurrent];
+		lbEl.classList.add('active');
+		document.body.style.overflow = 'hidden';
+		// Affiche/masque les flèches selon le nombre d'images
+		document.getElementById('lb-prev').style.display = lbImages.length > 1 ? '' : 'none';
+		document.getElementById('lb-next').style.display = lbImages.length > 1 ? '' : 'none';
+	}
+
+	function lbClose() {
+		lbEl.classList.remove('active');
+		document.body.style.overflow = '';
+	}
+
+	function lbMove(dir) {
+		lbCurrent = (lbCurrent + dir + lbImages.length) % lbImages.length;
+		document.getElementById('lb-img').src = lbImages[lbCurrent];
+	}
+
+	document.getElementById('lb-close').addEventListener('click', lbClose);
+	document.getElementById('lb-prev').addEventListener('click', function() { lbMove(-1); });
+	document.getElementById('lb-next').addEventListener('click', function() { lbMove(1); });
+	lbEl.addEventListener('click', function(e) { if (e.target === lbEl) lbClose(); });
+	document.addEventListener('keydown', function(e) {
+		if (!lbEl.classList.contains('active')) return;
+		if (e.key === 'Escape') lbClose();
+		if (e.key === 'ArrowLeft')  lbMove(-1);
+		if (e.key === 'ArrowRight') lbMove(1);
+	});
+
+	// Attache la lightbox aux images de la galerie projet (injectées dynamiquement)
+	// On utilise un MutationObserver car chargerProjet() s'exécute après cet event
+	var gallery = document.getElementById('projet-gallery');
+	if (gallery) {
+		var observer = new MutationObserver(function() {
+			var imgs = gallery.querySelectorAll('img');
+			lbImages = Array.from(imgs).map(function(img) { return img.src; });
+			imgs.forEach(function(img, i) {
+				img.style.cursor = 'zoom-in';
+				img.addEventListener('click', function() { lbOpen(i); });
+			});
+		});
+		observer.observe(gallery, { childList: true });
+	}
+
+	// ── Formulaire Formspree (AJAX, toutes les pages) ─────────────
+	var forms = document.querySelectorAll('#contact-form');
+	forms.forEach(function(form) {
+		form.addEventListener('submit', function(e) {
+			e.preventDefault();
+			var statusEl = form.querySelector('#form-status');
+			var submitBtn = form.querySelector('input[type="submit"]');
+			submitBtn.disabled = true;
+			submitBtn.value = 'Sending...';
+
+			fetch(form.action, {
+				method: 'POST',
+				body: new FormData(form),
+				headers: { 'Accept': 'application/json' }
+			}).then(function(response) {
+				if (response.ok) {
+					statusEl.textContent = '✓ Message sent! I\'ll get back to you soon.';
+					statusEl.style.background = '#e8f5e9';
+					statusEl.style.color = '#2e7d32';
+					statusEl.style.display = 'block';
+					form.reset();
+					submitBtn.value = 'Send';
+					submitBtn.disabled = false;
+				} else {
+					response.json().then(function(data) {
+						statusEl.textContent = data.errors ? data.errors.map(function(e) { return e.message; }).join(', ') : 'Something went wrong. Please try again.';
+						statusEl.style.background = '#fdecea';
+						statusEl.style.color = '#c62828';
+						statusEl.style.display = 'block';
+						submitBtn.value = 'Send';
+						submitBtn.disabled = false;
+					});
+				}
+			}).catch(function() {
+				statusEl.textContent = 'Network error. Please try again.';
+				statusEl.style.background = '#fdecea';
+				statusEl.style.color = '#c62828';
+				statusEl.style.display = 'block';
+				submitBtn.value = 'Send';
+				submitBtn.disabled = false;
+			});
+		});
+	});
+
+});
 
 (function($) {
 
