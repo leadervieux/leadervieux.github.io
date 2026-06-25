@@ -12,10 +12,10 @@
 const projets = {
 	"Minesweeper": {
 		titre: "Minesweeper in Java",
-		description: "School project built within a set deadline to learn Java and object-oriented programming. The game features a full graphical interface, mine placement logic, and win/loss detection. The full source code is on GitHub, along with a French report covering the game rules and key implementation choices.",
+		description: "School project built within a set deadline to learn Java and object-oriented programming. The game runs in the console and implements mine placement logic, cell uncovering, and win/loss detection. The full source code is on GitHub, along with a French report covering the game rules and key implementation choices.",
 		images: [],
 		github: "https://github.com/leadervieux/Minesweeper-in-Java.git",
-		rapport: null
+		rapport: "https://github.com/leadervieux/leadervieux.github.io/blob/main/d%C3%A9mineur_DERVIEUX.pdf"
 	},
 	"Power-BI": {
 		titre: "Data Visualisation with Power BI",
@@ -98,28 +98,6 @@ window.addEventListener('DOMContentLoaded', function() {
 	// ── Projet page ──────────────────────────────────────────────
 	if (window.location.pathname.includes("generic.html")) {
 		chargerProjet();
-	}
-
-	// ── Typewriter (page d'accueil uniquement) ────────────────────
-	var twEl = document.getElementById('typewriter-text');
-	if (twEl) {
-		var twText = "Welcome! This is a collection of my personal projects where I explore the intersection of Machine Learning, programming, and data storytelling.";
-		var twIndex = 0;
-		var twSpeed = 28; // ms par caractère — augmente pour ralentir
-
-		function typeNextChar() {
-			if (twIndex < twText.length) {
-				twEl.textContent += twText.charAt(twIndex);
-				twIndex++;
-				setTimeout(typeNextChar, twSpeed);
-			} else {
-				// Curseur clignotant qui disparaît après la fin
-				twEl.classList.add('tw-done');
-			}
-		}
-
-		// Petite pause avant de démarrer (laisse la page s'afficher)
-		setTimeout(typeNextChar, 600);
 	}
 
 	// ── Lightbox (pages projet avec galerie) ──────────────────────
