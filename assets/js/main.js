@@ -15,7 +15,7 @@ const projets = {
 		description: "School project built within a set deadline to learn Java and object-oriented programming. The game runs in the console and implements mine placement logic, cell uncovering, and win/loss detection. The full source code is on GitHub, along with a French report covering the game rules and key implementation choices.",
 		images: [],
 		github: "https://github.com/leadervieux/Minesweeper-in-Java.git",
-		rapport: "https://raw.githubusercontent.com/leadervieux/leadervieux.github.io/main/d%C3%A9mineur_DERVIEUX.pdf"
+		rapport: "démineur_DERVIEUX.pdf"
 	},
 	"Power-BI": {
 		titre: "Data Visualisation with Power BI",
