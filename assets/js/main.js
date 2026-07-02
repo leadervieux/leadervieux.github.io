@@ -15,7 +15,7 @@ const projets = {
 		description: "School project built within a set deadline to learn Java and object-oriented programming. The game runs in the console and implements mine placement logic, cell uncovering, and win/loss detection. The full source code is on GitHub, along with a French report covering the game rules and key implementation choices.",
 		images: [],
 		github: "https://github.com/leadervieux/Minesweeper-in-Java.git",
-		rapport: "démineur_DERVIEUX.pdf"
+		rapport: "d%C3%A9mineur_DERVIEUX.pdf"
 	},
 	"Power-BI": {
 		titre: "Data Visualisation with Power BI",
@@ -26,10 +26,10 @@ const projets = {
 	},
 	"Vasopressor-use": {
 		titre: "Vasopressor Use After Non-Cardiac Surgery",
-		description: "Conducted during a research internship at NORCE, in collaboration with Haukeland University Hospital (Bergen, Norway). The study analyses the SQUEEZE database, covering over 25,000 surgical patients, to investigate sex as an independent risk factor for postoperative vasopressor use. Logistic regression models with interaction terms were applied in RStudio. Scientific report in preparation.",
+		description: "Conducted during a research internship at NORCE, in collaboration with Haukeland University Hospital (Bergen, Norway). The study analyses the SQUEEZE database, covering over 18,000 surgical patients, to investigate sex as an independent risk factor for postoperative vasopressor use. Mixed-effects logistic regression, Random Forest, and Propensity-Score Matching were applied in RStudio. A direct biological effect of 4.7 percentage points persists for males even when fluid volumes per kilogram are equalized. The poster below was presented at the 21st international EnKF Workshop (2026).",
 		images: [],
 		github: null,
-		rapport: null
+		rapport: "Poster.pdf"
 	},
 	"fraud-detection": {
 		titre: "Fraud Detection — Kaggle Competition",
@@ -40,17 +40,17 @@ const projets = {
 	},
 	"CFS-impact": {
 		titre: "Clinical Frailty Score vs ASA Score",
-		description: "Conducted during a research internship at NORCE, in collaboration with Haukeland University Hospital (Bergen, Norway). Using RStudio, we compared the predictive power of the Clinical Frailty Score (CFS) and the ASA Score on postoperative outcomes after non-cardiac surgery. The project highlighted the limits of likelihood-ratio tests on large datasets, and applied ordinal and mixed-effects logistic regression models. Scientific report in preparation.",
+		description: "Conducted during a research internship at NORCE, in collaboration with Haukeland University Hospital (Bergen, Norway). Using RStudio, we compared the predictive power of the Clinical Frailty Score (CFS) and the ASA Score on postoperative outcomes (mortality, hospital stay, complications) in 25,054 elderly non-cardiac surgery patients. The CFS yields statistically significant but clinically modest improvements: AUC gains range from 0.011 (complications) to 0.027 (mortality), suggesting the ASA score alone captures the vast majority of the predictive signal.",
 		images: [],
 		github: null,
-		rapport: null
+		rapport: "report_CFS.pdf"
 	},
 	"diffusion-finance": {
 		titre: "Diffusion Models Applied to Finance",
 		description: "4th-year engineering project at Polytech Clermont, conducted with Maxime Brée. We explored score-based diffusion models (Kronos, TimeDiffusion, TimeGrad) for probabilistic forecasting of Bitcoin stock indicators on a dataset of ~300,000 time steps. The final model, TimeGrad, generates stochastic trajectories with calibrated 50% and 80% confidence intervals. Global trend accuracy reached ~50% over a 15-step horizon — close to random, reflecting the fundamental unpredictability of short-term markets, but the model's strength lies in correctly quantifying its own uncertainty rather than producing overconfident point predictions.",
 		images: [],
 		github: null,
-		rapport: null
+		rapport: "rapport_diffusion.pdf"
 	}
 };
 
