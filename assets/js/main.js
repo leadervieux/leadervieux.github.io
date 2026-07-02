@@ -4,18 +4,13 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-// 1. La liste des données : un seul objet "projets", complète/modifie ici pour ajouter ou changer un projet.
-//    - images  : (optionnel) tableau de captures d'écran à afficher sous la description, ex: ["images/powerbi-1.png", "images/powerbi-2.png"]
-//                Laisse le tableau vide [] si tu ne veux aucune image sur la page du projet.
-//    - github  : mets null si tu ne veux PAS afficher le bouton GitHub
-//    - rapport : mets null si tu ne veux PAS afficher le bouton Rapport (sinon, lien vers un PDF ou une page)
 const projets = {
 	"Minesweeper": {
 		titre: "Minesweeper in Java",
 		description: "School project built within a set deadline to learn Java and object-oriented programming. The game runs in the console and implements mine placement logic, cell uncovering, and win/loss detection. The full source code is on GitHub, along with a French report covering the game rules and key implementation choices.",
 		images: [],
 		github: "https://github.com/leadervieux/Minesweeper-in-Java.git",
-		rapport: "d%C3%A9mineur_DERVIEUX.pdf"
+		rapport: "demineur_DERVIEUX.pdf"
 	},
 	"Power-BI": {
 		titre: "Data Visualisation with Power BI",
