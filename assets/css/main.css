@@ -2876,6 +2876,7 @@ input, select, textarea {
 					width: 6em;
 					height: 6em;
 					object-fit: cover;
+					object-position: top;
 				}
 
 		#header nav {
