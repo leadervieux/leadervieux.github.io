@@ -2375,6 +2375,8 @@ input, select, textarea {
 				height: 100%;
 				-webkit-object-fit: cover;
 				object-fit: cover;
+				-webkit-object-position: top;
+				object-position: top;
 				border-radius: 50%;
 			}
 
