@@ -21,7 +21,7 @@ const projets = {
 	},
 	"Vasopressor-use": {
 		titre: "Vasopressor Use After Non-Cardiac Surgery",
-		description: "Conducted during a research internship at NORCE, in collaboration with Haukeland University Hospital (Bergen, Norway). The study analyses the SQUEEZE database, covering over 18,000 surgical patients, to investigate sex as an independent risk factor for postoperative vasopressor use. Mixed-effects logistic regression, Random Forest, and Propensity-Score Matching were applied in RStudio. A direct biological effect of 4.7 percentage points persists for males even when fluid volumes per kilogram are equalized. A scientific report in english is currently being drafted. The poster below was presented at the 21st international EnKF Workshop (2026).",
+		description: "Conducted during a research internship at NORCE, in collaboration with Haukeland University Hospital (Bergen, Norway). The study analyses the SQUEEZE database, covering over 18,000 surgical patients, to investigate sex as an independent risk factor for postoperative vasopressor use. Mixed-effects logistic regression, Random Forest, and Propensity-Score Matching were applied in RStudio. A direct biological effect of 4.7 percentage points persists for males even when fluid volumes per kilogram are equalized.<p> A scientific report in english is currently being drafted. The poster below was presented at the 21st international EnKF Workshop (2026). </p>",
 		images: [],
 		github: null,
 		rapport: "Poster.pdf"
