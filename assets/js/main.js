@@ -26,7 +26,7 @@ const projets = {
 	},
 	"Vasopressor-use": {
 		titre: "Vasopressor Use After Non-Cardiac Surgery",
-		description: "Conducted during a research internship at NORCE, in collaboration with Haukeland University Hospital (Bergen, Norway). The study analyses the SQUEEZE database, covering over 18,000 surgical patients, to investigate sex as an independent risk factor for postoperative vasopressor use. Mixed-effects logistic regression, Random Forest, and Propensity-Score Matching were applied in RStudio. A direct biological effect of 4.7 percentage points persists for males even when fluid volumes per kilogram are equalized. The poster below was presented at the 21st international EnKF Workshop (2026).",
+		description: "Conducted during a research internship at NORCE, in collaboration with Haukeland University Hospital (Bergen, Norway). The study analyses the SQUEEZE database, covering over 18,000 surgical patients, to investigate sex as an independent risk factor for postoperative vasopressor use. Mixed-effects logistic regression, Random Forest, and Propensity-Score Matching were applied in RStudio. A direct biological effect of 4.7 percentage points persists for males even when fluid volumes per kilogram are equalized. A scientific report in english is currently being drafted. The poster below was presented at the 21st international EnKF Workshop (2026).",
 		images: [],
 		github: null,
 		rapport: "Poster.pdf"
@@ -40,14 +40,14 @@ const projets = {
 	},
 	"CFS-impact": {
 		titre: "Clinical Frailty Score vs ASA Score",
-		description: "Conducted during a research internship at NORCE, in collaboration with Haukeland University Hospital (Bergen, Norway). Using RStudio, we compared the predictive power of the Clinical Frailty Score (CFS) and the ASA Score on postoperative outcomes (mortality, hospital stay, complications) in 25,054 elderly non-cardiac surgery patients. The CFS yields statistically significant but clinically modest improvements: AUC gains range from 0.011 (complications) to 0.027 (mortality), suggesting the ASA score alone captures the vast majority of the predictive signal.",
+		description: "Conducted during a research internship at NORCE, in collaboration with Haukeland University Hospital (Bergen, Norway). Using RStudio, we compared the predictive power of the Clinical Frailty Score (CFS) and the ASA Score on postoperative outcomes (mortality, hospital stay, complications) in 25,054 elderly non-cardiac surgery patients. The CFS yields statistically significant but clinically modest improvements: AUC gains range from 0.011 (complications) to 0.027 (mortality), suggesting the ASA score alone captures the vast majority of the predictive signal. The next report, in english, will not be published due to a lack of data to analyze.",
 		images: [],
 		github: null,
 		rapport: "report_CFS.pdf"
 	},
 	"diffusion-finance": {
 		titre: "Diffusion Models Applied to Finance",
-		description: "4th-year engineering project at Polytech Clermont, conducted with Maxime Brée. We explored score-based diffusion models (Kronos, TimeDiffusion, TimeGrad) for probabilistic forecasting of Bitcoin stock indicators on a dataset of ~300,000 time steps. The final model, TimeGrad, generates stochastic trajectories with calibrated 50% and 80% confidence intervals. Global trend accuracy reached ~50% over a 15-step horizon — close to random, reflecting the fundamental unpredictability of short-term markets, but the model's strength lies in correctly quantifying its own uncertainty rather than producing overconfident point predictions.",
+		description: "4th-year engineering project at Polytech Clermont, conducted with Maxime Brée. We explored score-based diffusion models (Kronos, TimeDiffusion, TimeGrad) for probabilistic forecasting of Bitcoin stock indicators on a dataset of ~300,000 time steps. The final model, TimeGrad, generates stochastic trajectories with calibrated 50% and 80% confidence intervals. Global trend accuracy reached ~50% over a 15-step horizon — close to random, reflecting the fundamental unpredictability of short-term markets, but the model's strength lies in correctly quantifying its own uncertainty rather than producing overconfident point predictions. The report below is in french.",
 		images: [],
 		github: null,
 		rapport: "rapport_diffusion.pdf"
