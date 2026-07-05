@@ -7,42 +7,42 @@
 const projets = {
 	"Minesweeper": {
 		titre: "Minesweeper in Java",
-		description: "School project built within a set deadline to learn Java and object-oriented programming. The game runs in the console and implements mine placement logic, cell uncovering, and win/loss detection. The full source code is on GitHub, along with a French report covering the game rules and key implementation choices.",
+		description: "School project built within a set deadline to learn Java and object-oriented programming. The goal was to implement the full logic of the classic Minesweeper game — mine placement, cell uncovering cascade, and win/loss detection — running entirely in the console. The full source code is on GitHub, along with a report covering the implementation choices. (Report in French)",
 		images: [],
 		github: "https://github.com/leadervieux/Minesweeper-in-Java.git",
 		rapport: "demineur_DERVIEUX.pdf"
 	},
 	"Power-BI": {
 		titre: "Data Visualisation with Power BI",
-		description: "In this school project, we worked with a synthetic dataset from a fictional surveillance camera company. Using Power BI, we built a report featuring calculated columns, custom DAX measures, interactive maps and tables — designed to present data-driven sales arguments to potential buyers.",
+		description: "School project exploring data visualisation with Power BI. Working with a synthetic dataset from a fictional surveillance camera company, the goal was to build an interactive report that could convince potential buyers — using calculated columns, custom DAX measures, maps, and tables to turn raw data into a clear sales argument. (Report in French)",
 		images: ["images/powerbi-1.png", "images/powerbi-2.png", "images/powerbi-3.png"],
 		github: null,
 		rapport: null
 	},
 	"Vasopressor-use": {
 		titre: "Vasopressor Use After Non-Cardiac Surgery",
-		description: "Conducted during a research internship at NORCE, in collaboration with Haukeland University Hospital (Bergen, Norway). The study analyses the SQUEEZE database, covering over 18,000 surgical patients, to investigate sex as an independent risk factor for postoperative vasopressor use. Mixed-effects logistic regression, Random Forest, and Propensity-Score Matching were applied in RStudio. A direct biological effect of 4.7 percentage points persists for males even when fluid volumes per kilogram are equalized. A scientific report in english is currently being drafted. The poster below was presented at the 21st international EnKF Workshop (2026).",
+		description: "Research internship at NORCE, in collaboration with Haukeland University Hospital (Bergen, Norway). The central question: is the higher rate of postoperative vasopressor use in male patients a genuine biological phenomenon, or simply a consequence of greater surgical complexity? Analysing over 18,000 patients from the SQUEEZE database using mixed-effects logistic regression, Propensity-Score Matching and mediation analysis, we found a direct biological effect of 4.7 percentage points persisting even after equalising fluid volumes per kilogram. A scientific report in English is currently being drafted. Poster presented at the 21st international EnKF Workshop (2026).",
 		images: [],
 		github: null,
 		rapport: "Poster.pdf"
 	},
 	"fraud-detection": {
 		titre: "Fraud Detection — Kaggle Competition",
-		description: "Personal project based on a Kaggle competition. Covers full exploratory data analysis (EDA) and hyperparameter tuning with Optuna. XGBoost and TimeSplit cross-validation were used to predict fraudulent transactions on imbalanced financial data. Public leaderboard score: 0.929 AUC — Private score: 0.892 AUC. Full code available on GitHub.",
+		description: "Personal project based on a Kaggle competition. The challenge: detect fraudulent transactions in a heavily imbalanced financial dataset where fraud represents a tiny fraction of all events. Full exploratory data analysis (EDA), hyperparameter tuning with Optuna, and XGBoost with TimeSplit cross-validation were used to handle the class imbalance and temporal structure of the data. Public leaderboard score: 0.929 AUC — Private score: 0.892 AUC.",
 		images: [],
 		github: "https://github.com/leadervieux/Fraud-project.git",
 		rapport: null
 	},
 	"CFS-impact": {
 		titre: "Clinical Frailty Score vs ASA Score",
-		description: "Conducted during a research internship at NORCE, in collaboration with Haukeland University Hospital (Bergen, Norway). Using RStudio, we compared the predictive power of the Clinical Frailty Score (CFS) and the ASA Score on postoperative outcomes (mortality, hospital stay, complications) in 25,054 elderly non-cardiac surgery patients. The CFS yields statistically significant but clinically modest improvements: AUC gains range from 0.011 (complications) to 0.027 (mortality), suggesting the ASA score alone captures the vast majority of the predictive signal. The next report, in english, will not be published due to a lack of data to analyze.",
+		description: "Research internship at NORCE, in collaboration with Haukeland University Hospital (Bergen, Norway). The question: does adding the Clinical Frailty Score (CFS) to the standard ASA score meaningfully improve the prediction of postoperative outcomes in elderly patients? Analysing 25,054 non-cardiac surgery patients using mixed-effects logistic and ordinal regression in RStudio, we found statistically significant but clinically modest improvements — AUC gains from 0.011 to 0.027 — suggesting the ASA score alone already captures the vast majority of the predictive signal. No further report will be published.",
 		images: [],
 		github: null,
 		rapport: "report_CFS.pdf"
 	},
 	"diffusion-finance": {
 		titre: "Diffusion Models Applied to Finance",
-		description: "4th-year engineering project at Polytech Clermont, conducted with Maxime Brée. We explored score-based diffusion models (Kronos, TimeDiffusion, TimeGrad) for probabilistic forecasting of Bitcoin stock indicators on a dataset of ~300,000 time steps. The final model, TimeGrad, generates stochastic trajectories with calibrated 50% and 80% confidence intervals. Global trend accuracy reached ~50% over a 15-step horizon — close to random, reflecting the fundamental unpredictability of short-term markets, but the model's strength lies in correctly quantifying its own uncertainty rather than producing overconfident point predictions. The report below is in french.",
+		description: "4th-year engineering project at Polytech Clermont, conducted with Maxime Brée. The question: can score-based diffusion models produce meaningful probabilistic forecasts for financial time series? After testing three architectures (Kronos, TimeDiffusion, a custom model), we settled on TimeGrad — a conditional multivariate diffusion model trained on ~300,000 Bitcoin time steps. Rather than predicting a single value, the model generates stochastic trajectories with calibrated confidence intervals. Trend accuracy (~50% over T+15) confirms the short-term market efficiency hypothesis, but the model's real value lies in correctly quantifying its own uncertainty. (Report in French)",
 		images: [],
 		github: null,
 		rapport: "rapport_diffusion.pdf"
