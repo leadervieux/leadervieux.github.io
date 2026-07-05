@@ -1928,6 +1928,11 @@ input, select, textarea {
 		padding-left: 0;
 	}
 
+	/* Extra top spacing for action buttons on project pages */
+	#main .inner > ul.actions {
+		margin-top: 2.5em;
+	}
+
 		ul.actions li {
 			padding: 0 0 0 1em;
 			vertical-align: middle;
